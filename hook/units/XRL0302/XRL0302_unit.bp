@@ -219,7 +219,7 @@ UnitBlueprint {
         {            
             AboveWaterTargetsOnly = true,
             CollideFriendly = false,
-            Damage = 1100,
+            Damage = 300,
             DamageFriendly = false,
             DamageRadius = 6,
             DamageType = 'FireBeetleExplosion',
@@ -231,7 +231,7 @@ UnitBlueprint {
             },
             FiringTolerance = 180,
             Label = 'Suicide',
-            MaxRadius = 5.8,
+            MaxRadius = 3,
             TargetCheckInterval = 999999,
             TargetPriorities = {
                 'MOBILE',
@@ -290,8 +290,8 @@ UnitBlueprint {
             DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'Napalm Bomb',
-            DoTPulses = 10,
-            DoTTime = 10,
+            DoTPulses = 20,
+            DoTTime = 6,
             FireTargetLayerCapsTable = {
                 Land = 'Air|Land|Seabed|Water',
                 Water = 'Air|Land|Water',
@@ -301,11 +301,11 @@ UnitBlueprint {
             FiringTolerance = 6,
             InitialDamage = 20,
             Label = 'DeathWeapon',
-            MaxRadius = 10,
+            MaxRadius = 6,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
-            ProjectileId = '/projectiles/FireBeetleBomb/FireBeetleBomb_proj.bp',
+            MuzzleVelocity = 4,
+            ProjectileId = '/mods/napalm beetle/hook/projectiles/FireBeetleBomb/FireBeetleBomb_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -314,7 +314,12 @@ UnitBlueprint {
                         'DeathWeapon',
                         'DeathWeapon',
                         'DeathWeapon',
-
+                        'DeathWeapon',
+                        'DeathWeapon',
+                        'DeathWeapon',
+                        'DeathWeapon',
+                        'DeathWeapon',
+                        'DeathWeapon',
                     },
                     RackBone = 'torso',
                 },
