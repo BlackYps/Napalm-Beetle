@@ -90,8 +90,8 @@ XRL0302 = Class(CWalkingLandUnit) {
 
     -- Allow the trigger button to blow the weapon, resulting in OnKilled instigator 'nil'
     OnProductionPaused = function(self)
+        self:GetWeaponByLabel('DeathWeapon'):Fire()
         self:GetWeaponByLabel('Suicide'):FireWeapon()
-        self:GetWeaponByLabel('DeathWeapon'):FireWeapon()
     end,
     
     EmitPeriodicEffects = function(self)
