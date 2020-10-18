@@ -10,18 +10,6 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 local Weapon = import('/lua/sim/Weapon.lua').Weapon
 local DefaultProjectileWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
-local EMPDeathWeapon = Class(Weapon) {
-    OnCreate = function(self)
-        Weapon.OnCreate(self)
-        self:SetWeaponEnabled(false)
-    end,
-
-    Fire = function(self)
-        local blueprint = self:GetBlueprint()
-        DamageArea(self.unit, self.unit:GetPosition(), blueprint.DamageRadius,
-                   blueprint.Damage, blueprint.DamageType, blueprint.DamageFriendly)
-    end,
-}
 
 local NapalmDeathWeapon = Class(DefaultProjectileWeapon) {
     FxMuzzleFlash = {'/effects/emitters/antiair_muzzle_fire_02_emit.bp',},
@@ -67,7 +55,6 @@ XRL0302 = Class(CWalkingLandUnit) {
 
     Weapons = {
         Suicide = Class(CMobileKamikazeBombWeapon) {},
-        DeathWeapon2 = Class(EMPDeathWeapon) {},
         DeathWeapon = Class(NapalmDeathWeapon) {},
     },
 
