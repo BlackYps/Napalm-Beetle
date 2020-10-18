@@ -45,6 +45,10 @@ local NapalmDeathWeapon = Class(DefaultProjectileWeapon) {
         end
         return projectile
     end,
+    
+    Fire = function(self)
+        ChangeState(self, self.RackSalvoFiringState)
+    end,
 }
 
 XRL0302 = Class(CWalkingLandUnit) {
@@ -63,8 +67,8 @@ XRL0302 = Class(CWalkingLandUnit) {
 
     Weapons = {
         Suicide = Class(CMobileKamikazeBombWeapon) {},
-        DeathWeapon = Class(EMPDeathWeapon) {},
-        DeathWeapon2 = Class(NapalmDeathWeapon) {},
+        DeathWeapon2 = Class(EMPDeathWeapon) {},
+        DeathWeapon = Class(NapalmDeathWeapon) {},
     },
 
     AmbientExhaustBones = {
@@ -87,6 +91,7 @@ XRL0302 = Class(CWalkingLandUnit) {
     -- Allow the trigger button to blow the weapon, resulting in OnKilled instigator 'nil'
     OnProductionPaused = function(self)
         self:GetWeaponByLabel('Suicide'):FireWeapon()
+        self:GetWeaponByLabel('DeathWeapon'):FireWeapon()
     end,
     
     EmitPeriodicEffects = function(self)
