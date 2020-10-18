@@ -8,6 +8,7 @@ local CWalkingLandUnit = import('/lua/cybranunits.lua').CWalkingLandUnit
 local CMobileKamikazeBombWeapon = import('/lua/cybranweapons.lua').CMobileKamikazeBombWeapon
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local Weapon = import('/lua/sim/Weapon.lua').Weapon
+local DefaultProjectileWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
 local EMPDeathWeapon = Class(Weapon) {
     OnCreate = function(self)
@@ -19,6 +20,30 @@ local EMPDeathWeapon = Class(Weapon) {
         local blueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), blueprint.DamageRadius,
                    blueprint.Damage, blueprint.DamageType, blueprint.DamageFriendly)
+    end,
+}
+
+local NapalmDeathWeapon = Class(DefaultProjectileWeapon) {
+    FxMuzzleFlash = {'/effects/emitters/antiair_muzzle_fire_02_emit.bp',},
+    
+    CreateProjectileForWeapon = function(self, bone)
+        local projectile = self:CreateProjectile(bone)
+        local damageTable = self:GetDamageTable()
+        local blueprint = self:GetBlueprint()
+        local data = {
+            Instigator = self.unit,
+            Damage = blueprint.DoTDamage,
+            Duration = blueprint.DoTDuration,
+            Frequency = blueprint.DoTFrequency,
+            Radius = blueprint.DamageRadius,
+            Type = 'Normal',
+            DamageFriendly = blueprint.DamageFriendly,
+        }
+        if projectile and not projectile:BeenDestroyed() then
+            projectile:PassData(data)
+            projectile:PassDamageData(damageTable)
+        end
+        return projectile
     end,
 }
 
@@ -39,6 +64,7 @@ XRL0302 = Class(CWalkingLandUnit) {
     Weapons = {
         Suicide = Class(CMobileKamikazeBombWeapon) {},
         DeathWeapon = Class(EMPDeathWeapon) {},
+        DeathWeapon2 = Class(NapalmDeathWeapon) {},
     },
 
     AmbientExhaustBones = {

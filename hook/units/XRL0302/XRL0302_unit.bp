@@ -279,6 +279,47 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE, AIR',
             WeaponCategory = 'Direct Fire',
         },
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            Damage = 6,
+            DamageFriendly = false,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DisplayName = 'Napalm Bomb',
+            DoTPulses = 10,
+            DoTTime = 6, -- 90 fire damage per bomb, Total fire damage = 1200
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Seabed|Water',
+                Land = 'Air|Land|Seabed|Water',
+                Water = 'Air|Land|Water',
+            },
+            FireOnDeath = true,
+            FiringRandomness = 0.5,
+            FiringTolerance = 6,
+            FixBombTrajectory = true,
+            InitialDamage = 20, -- Total impact damage = 400. Total overall damage = 1600
+            Label = 'DeathWeapon2',
+            MaxRadius = 60,
+            MuzzleVelocity = 10,
+            ProjectileId = '/projectiles/TIFNapalmCarpetBomb02/TIFNapalmCarpetBomb02_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        0,
+                    },
+                    RackBone = 0,
+                },
+            },
+            RangeCategory = 'UWRC_InDirectFire',
+            RateOfFire = 0.5,
+            SalvoSize = 10,
+            SlavedToBody = true,
+            TargetCheckInterval = 1,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            WeaponCategory = 'Bomb',
+        },
     },
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
