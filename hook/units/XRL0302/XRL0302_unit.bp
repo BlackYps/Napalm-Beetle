@@ -246,7 +246,7 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 6,
+            Damage = 10,
             DamageFriendly = false,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -258,9 +258,9 @@ UnitBlueprint {
                 Water = 'Air|Land|Water',
             },
             FireOnDeath = true,
-            FiringRandomness = 40,
+            FiringRandomness = 50,
             FiringTolerance = 6,
-            InitialDamage = 20,
+            InitialDamage = 20, --total damage = InitialDamage + Damage * DoTPulses
             Label = 'DeathWeapon',
             MaxRadius = 6,
             MuzzleSalvoDelay = 0,
@@ -270,6 +270,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
+                        'DeathWeapon',
                         'DeathWeapon',
                         'DeathWeapon',
                         'DeathWeapon',

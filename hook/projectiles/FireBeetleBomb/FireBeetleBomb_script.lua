@@ -1,6 +1,5 @@
 
 local TNapalmHvyCarpetBombProjectile = import('/lua/terranprojectiles.lua').TNapalmHvyCarpetBombProjectile
-local EffectTemplate = import('/lua/EffectTemplates.lua')
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 
 FireBeetleBomb = Class(TNapalmHvyCarpetBombProjectile) {
