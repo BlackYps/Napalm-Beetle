@@ -252,7 +252,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'Napalm Bomb',
             DoTPulses = 20,
-            DoTTime = 6,
+            DoTTime = 10,
             FireTargetLayerCapsTable = {
                 Land = 'Air|Land|Seabed|Water',
                 Water = 'Air|Land|Water',
