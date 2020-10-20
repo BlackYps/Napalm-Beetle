@@ -1,8 +1,8 @@
 
-local TNapalmHvyCarpetBombProjectile = import('/lua/terranprojectiles.lua').TNapalmHvyCarpetBombProjectile
+local CNapalmBombProjectile = import('/mods/napalm beetle/hook/lua/cybranprojectiles.lua').CNapalmBombProjectile
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 
-FireBeetleBomb = Class(TNapalmHvyCarpetBombProjectile) {
+FireBeetleBomb = Class(CNapalmBombProjectile) {
 
     OnImpact = function(self, targetType, targetEntity)
         if targetType ~= 'Shield' and targetType ~= 'Water' and targetType ~= 'Air' and targetType ~= 'UnitAir' and targetType ~= 'Projectile' then
@@ -17,7 +17,7 @@ FireBeetleBomb = Class(TNapalmHvyCarpetBombProjectile) {
             DamageArea(self, pos, radius, 1, 'Force', true)
             CreateDecal(pos, rotation, 'scorch_001_albedo', '', 'Albedo', size, size, 150, 50, army)
         end
-        TNapalmHvyCarpetBombProjectile.OnImpact(self, targetType, targetEntity)
+        CNapalmBombProjectile.OnImpact(self, targetType, targetEntity)
     end,
 }
 

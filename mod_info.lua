@@ -7,7 +7,3 @@ selectable = true
 enabled = true
 exclusive = false
 ui_only = false
-icon = ""
-before = {}
-after = {}
-conflicts = {}

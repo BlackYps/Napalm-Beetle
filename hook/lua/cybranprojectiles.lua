@@ -1,17 +1,21 @@
 
+local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
+local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
+local EffectTemplate = import('/mods/napalm beetle/hook/lua/EffectTemplates.lua')
+
 #------------------------------------------------------------------------
-#  TERRAN HEAVY NAPALM CARPET BOMB
+#  CYBRAN NAPALM BOMB
 #------------------------------------------------------------------------
-local TNapalmHvyCarpetBombProjectile = Class(SinglePolyTrailProjectile) {
+CNapalmBombProjectile = Class(SinglePolyTrailProjectile) {
     FxTrails = {},
 
     FxImpactTrajectoryAligned = false,
 
     # Hit Effects
-    FxImpactUnit = EffectTemplate.TNapalmHvyCarpetBombHitLand01,
-    FxImpactProp = EffectTemplate.TNapalmHvyCarpetBombHitLand01,
-    FxImpactLand = EffectTemplate.TNapalmHvyCarpetBombHitLand01,
-    FxImpactWater = EffectTemplate.TNapalmHvyCarpetBombHitWater01,
+    FxImpactUnit = EffectTemplate.CNapalmBombHitLand01,
+    FxImpactProp = EffectTemplate.CNapalmBombHitLand01,
+    FxImpactLand = EffectTemplate.CNapalmBombHitLand01,
+    FxImpactWater = EffectTemplate.CNapalmBombHitWater01,
     FxImpactUnderWater = {},
-    PolyTrail = '/effects/emitters/default_polytrail_01_emit.bp',
+    PolyTrail = '/effects/emitters/default_polytrail_03_emit.bp',
 }
