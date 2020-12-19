@@ -164,7 +164,7 @@ UnitBlueprint {
             RULEUTC_ProductionToggle = true,
         },
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = '<LOC xrl0302_name>Fire Beetle',
+        UnitName = '<LOC xrl0302_name>Napalm Beetle',
         UnitWeight = 1,
         ExcludeFromVeterancy = true,
     },
@@ -266,7 +266,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 4,
-            ProjectileId = '/mods/napalm beetle/hook/projectiles/FireBeetleBomb/FireBeetleBomb_proj.bp',
+            ProjectileId = '/mods/napalm-beetle/projectiles/FireBeetleBomb/FireBeetleBomb_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

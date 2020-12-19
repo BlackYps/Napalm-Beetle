@@ -1,5 +1,5 @@
 
-local CNapalmBombProjectile = import('/mods/napalm beetle/hook/lua/cybranprojectiles.lua').CNapalmBombProjectile
+local CNapalmBombProjectile = import('/mods/napalm-beetle/hook/lua/cybranprojectiles.lua').CNapalmBombProjectile
 local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
 
 FireBeetleBomb = Class(CNapalmBombProjectile) {

@@ -1,7 +1,7 @@
 
 local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
 local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
-local EffectTemplate = import('/mods/napalm beetle/hook/lua/EffectTemplates.lua')
+local EffectTemplate = import('/mods/napalm-beetle/hook/lua/EffectTemplates.lua')
 
 #------------------------------------------------------------------------
 #  CYBRAN NAPALM BOMB

@@ -1,6 +1,6 @@
  
 EmtBpPath = '/effects/emitters/'
-ModBpPath = '/mods/napalm beetle/hook/effects/emitters/'
+ModBpPath = '/mods/napalm-beetle/effects/emitters/'
 
 -- ------------------------------------------------------------------------
 --  CYBRAN HEAVY NAPALM CARPET BOMB EMITTERS
