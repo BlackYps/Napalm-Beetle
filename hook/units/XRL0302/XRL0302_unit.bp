@@ -1,43 +1,6 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xrl0302",
-    AI = {
-        TargetBones = {
-            'torso',
-        },
-    },
-    Audio = {
-        AmbientMove = Sound {
-            Bank = 'XRL',
-            Cue = 'XRL0302_Move_Loop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Destroyed = Sound {
-            Bank = 'XRL_Weapon',
-            Cue = 'XRL0302_SelfDestructBomb',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        HoverKilledOnWater = Sound {
-            Bank = 'Explosions',
-            Cue = 'Expl_Water_Lrg_01',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StartMove = Sound {
-            Bank = 'XRL',
-            Cue = 'XRL0302_Move_Start',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'XRL',
-            Cue = 'XRL0302_Move_Stop',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        UISelection = Sound {
-            Bank = 'Interface',
-            Cue = 'Cybran_Select_Vehicle',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-    },
     Buffs = {
         Stun = {   
             Add = {
@@ -52,24 +15,6 @@ UnitBlueprint {
             TargetDisallow = 'EXPERIMENTAL, WALL, COMMAND',
         },
     },
-    BuildIconSortPriority = 80,
-    Categories = {
-        'PRODUCTFA',
-        'SELECTABLE',
-        'BUILTBYTIER2FACTORY',
-        'BUILTBYTIER3FACTORY',
-        'CYBRAN',
-        'MOBILE',
-        'LAND',
-        'BOT',
-        'TECH2',
-        'BOMB',
-        'DIRECTFIRE',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'SHOWATTACKRETICLE',
-    },
-    CollisionOffsetZ = 0.05,
     Defense = {
         AirThreatLevel = 0,
         ArmorType = 'Normal',
@@ -95,6 +40,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 100,
                     ShaderName = 'Insect',
+                    MeshName = '/mods/napalm-beetle/hook/units/XRL0302/XRL0302_lod0.scm',
                 },
                 {
                     AlbedoName = 'xrl0302_lod1_albedo.dds',
@@ -104,27 +50,6 @@ UnitBlueprint {
                 },
             },
         },
-        MovementEffects = {
-            Land = {
-                Effects = {
-                    {
-                        Bones = {
-                            'XRL0302',
-                        },
-                        Type = 'GroundKickup01',
-                    },
-                },
-            },
-        },
-        PlaceholderMeshName = 'UXL0011',
-        SpawnRandomRotation = true,
-        TransportAnimation = {
-            {
-                Animation = '/units/XRL0302/XRL0302_Afold01.sca',
-                Weight = 100,
-            },
-        },
-        UniformScale = 0.054,
     },
     Economy = {
         BuildCostEnergy = 1300,
@@ -179,15 +104,6 @@ UnitBlueprint {
     LifeBarOffset = 0.25,
     LifeBarSize = 0.5,
     Physics = {
-        BankingSlope = 0.5,
-        BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = true,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = false,
-            LAYER_Water = false,
-        },
         DragCoefficient = 0.2,
         Elevation = 0.25,
         MaxAcceleration = 5,
@@ -203,14 +119,6 @@ UnitBlueprint {
         TurnRadius = 4,
         TurnRate = 160,
     },
-    SelectionSizeX = 0.35,
-    SelectionSizeZ = 0.45,
-    SelectionThickness = 0.83,
-    SizeX = 0.5,
-    SizeY = 0.4,
-    SizeZ = 1,
-    StrategicIconName = 'icon_land2_bomb',
-    StrategicIconSortPriority = 135,
     Transport = {
         TransportClass = 1,
         CanFireFromTransport = false,
@@ -309,20 +217,6 @@ UnitBlueprint {
             TargetCheckInterval = 1,
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponCategory = 'InDirect Fire',
-        },
-    },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        WreckageLayers = {
-            Air = false,
-            Land = true,
-            Seabed = false,
-            Sub = false,
-            Water = false,
         },
     },
 }
